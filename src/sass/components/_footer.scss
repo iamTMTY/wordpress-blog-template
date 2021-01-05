@@ -1,0 +1,26 @@
+@import '../utilities/variables';
+
+footer {
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $primary-color;
+    color: white;
+
+    p {
+        font-size: 17px;
+    }
+}
+
+// mobile = 550px
+
+@media only screen and (max-width: 550px) {
+    footer {
+        height: 30px;
+    
+        p {
+            font-size: 13px;
+        }
+    }
+}

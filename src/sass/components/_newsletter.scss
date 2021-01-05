@@ -1,0 +1,117 @@
+@import '../utilities/variables';
+
+.newsletter {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 3vw;
+    width: 95%;
+
+    h2 {
+        color: $primary-color;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 50px 15vw;
+        border-radius: 10px;
+        background-color: $secondary-color;
+
+        p {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        div {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+            font-size: 15px;
+
+            input {
+                padding: 8px 10px;
+                font-size: 17px;
+                border: 1px solid $primary-color;
+                margin-top: 2px;
+                border-radius: 3px;
+            }
+
+        }
+    }
+}
+
+.form-submit {
+    background-color: $primary-color;
+    color: white;
+    border: 2px solid transparent;
+    padding: 10px 20px;
+    border-radius: 3px;
+    font-size: 15px;
+    font-weight: 600;
+    margin: 5px 0;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+// mobile 
+
+@media only screen and (max-width: 550px) {
+
+    .newsletter {
+        display: flex;
+        flex-direction: column;
+        margin: 20px 0;
+        width: 95%;
+
+        h2 {
+            width: 100%;
+            color: $primary-color;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 20px 10px;
+            border-radius: 10px;
+            background-color: $secondary-color;
+
+            p {
+                text-align: center;
+                margin-bottom: 15px;
+            }
+
+            div {
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 10px;
+                font-size: 15px;
+
+                input {
+                    padding: 8px 10px;
+                    font-size: 17px;
+                    border: 1px solid $primary-color;
+                    margin-top: 2px;
+                    border-radius: 3px;
+                }
+
+            }
+        }
+    }
+
+    .form-submit {
+        background-color: $primary-color;
+        color: white;
+        border: 2px solid transparent;
+        padding: 10px 20px;
+        border-radius: 3px;
+        font-size: 15px;
+        font-weight: 600;
+        margin: 5px 0;
+
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

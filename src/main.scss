@@ -1,0 +1,19 @@
+@import './sass/utilities/presets';
+@import './sass/components/about';
+@import './sass/components/contact';
+@import './sass/components/footer';
+@import './sass/components/header';
+@import './sass/components/newsletter';
+@import './sass/components/posts';
+@import './sass/components/social';
+@import './sass/pages/postpage';
+
+.home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @media only screen and (max-width: 550px) {
+       position: relative;
+    }
+}

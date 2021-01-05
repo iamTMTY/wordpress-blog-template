@@ -1,0 +1,86 @@
+@import '../utilities/variables';
+
+.social {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    z-index: 0;
+    top: calc((100vh - 150px)/ 2);
+    left: calc((7vw - 50px)/ 2);
+
+    button {
+        width: 40px;
+        height: 40px;
+        margin: 5px;
+        border-radius: 50%;
+        border: 2px solid $primary-color;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            width: 20px;
+            height: 20px;
+        }
+
+        &:hover {
+            cursor: pointer;
+            border-color: $tertiary-color;
+        }
+    }
+}
+
+@media only screen and (max-width: 800px) {
+
+    
+    .social {
+        top: calc((100vh - 105px)/ 2);
+        left: calc((7vw - 40px)/ 2);
+
+        button {
+            margin: 2.5px 5px;
+            width: 30px;
+            height: 30px;
+            
+            img {
+                width: 15px;
+                height: 15px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 550px) {
+
+    .social {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        // justify-content: space-between;
+        width: 100vw;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: white;
+    
+        button {
+            height: 40px;
+            width: 100%;
+            margin: 0;
+            border-radius: 0;
+            border: 1px solid $primary-color;
+            background-color: white;
+
+            img {
+                width: 20px;
+                height: 20px;
+            }
+    
+            &:hover {
+                cursor: pointer;
+                border-color: $tertiary-color;
+            }
+        }
+    }
+}
