@@ -7,7 +7,7 @@ export default class About {
     render = () => {
         return `
         <div class="about" id="about">
-            <h2>About</h2>
+            <h1>About</h1>
             <hr class="section-start">
 
             <img src="./imgs/background.jpg" alt="">

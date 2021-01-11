@@ -33,7 +33,7 @@
 .article-content {
      display: flex;
      flex-direction: column;
-     line-height: 2rem;
+     line-height: 1.5rem;
 
      img {
          width: 80%;
@@ -46,26 +46,33 @@
      }
 
      h2 {
-         color: $primary-color;
+        //  color: $primary-color;
          width: 100%;
          text-align: left;
          margin: 30px 0 15px;
-         font-size: 25px;
+         font-size: 27px;
      }
 
      h3 {
-        font-size: 20px;
+        font-size: 24px;
      }
 
      h4 {
-        font-size: 18px;
+        font-size: 20px;
      }
 
-    //  h5 {
-
-    //  }
+     h5 {
+        font-size: 18px;
+     }
      hr {
          margin: 5px 0;
+     }
+
+     p {
+         font-size: 17px;
+         margin-bottom: 20px;
+         width: 100%;
+         text-justify: inter-word;
      }
 }
 
@@ -84,12 +91,12 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    color: $primary-color;
+    // color: $primary-color;
     margin-bottom: 10px;
 
 
     h1 {
-        width: 65%;
+        // width: 65%;
         font-size: 30px;
     }
 }
@@ -105,6 +112,10 @@
     a {
         text-decoration: underline;
         color: grey;
+
+        &:hover {
+            color: $primary-color;
+        }
     }
 }
 
@@ -159,6 +170,7 @@
     }
 
     .article {
+        width: 90vw;
 
         img {
             width: 100%;

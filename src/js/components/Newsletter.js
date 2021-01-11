@@ -7,7 +7,7 @@ export default class Newsletter {
     render = () => {
         return `
         <section class="newsletter" id="newsletter">
-            <h2>Subscribe to Newsletter</h2>
+            <h1>Subscribe to Newsletter</h1>
             <hr class="section-start">
 
             <form action="" method="post">

@@ -7,7 +7,7 @@ export default class Contact {
     render = () => {
 
         return `
-        <div class="contact">
+        <div id="contact">
             <div class="content">
                 <div class="close">&times;</div>
                 <h2>send me a message</h2>

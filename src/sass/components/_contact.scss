@@ -1,6 +1,6 @@
 @import '../utilities/variables';
 
-.contact {
+#contact {
     position: absolute;
     height: 0;
     width: 100%;
@@ -82,11 +82,10 @@
     width: 100%;
     gap: 10px;
 
-    div {
+    & > div {
         display: flex;
         flex-direction: column;
         width: 200%;
-        gap: 10px;
 
         input {
             padding: 10px;
@@ -157,7 +156,7 @@
 
 
 @media only screen and (max-height: 600px) {
-    .contact {
+    #contact {
         align-items: flex-start;
     }
 

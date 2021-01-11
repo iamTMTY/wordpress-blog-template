@@ -14,7 +14,7 @@ export default class Post {
             
             postMarkup.push(
             `
-            <hr class="post-divider">
+            <!-- <hr class="post-divider"> -->
             ${await this.markup(postDetails)}
             ` 
             )
@@ -23,7 +23,6 @@ export default class Post {
 
         }, [])
 
-        // console.log(await this.markup(this.postDetails))
 
 
         return postMarkup.join('');
@@ -34,6 +33,20 @@ export default class Post {
         return `
         <section class="post" data-postId="${postDetails.id}">
             <article>
+                <div class="tags">
+                    <div class="tag-link">
+                        <img class="tag-img" src="./imgs/tags-solid.svg" alt="">
+                        <a href=""> Beginner </a>
+                    </div>
+                    <div class="tag-link">
+                        <img class="tag-img" src="./imgs/tags-solid.svg" alt="">
+                        <a href=""> Web Development </a>
+                    </div>
+                    <div class="tag-link">
+                        <img class="tag-img" src="./imgs/tags-solid.svg" alt="">
+                        <a href=""> Javascript </a>
+                    </div>
+                </div>
                 <header class="post-header"> 
                     <h2>${postDetails.title.rendered}</h2>
                     <div class="date_author">
@@ -43,18 +56,6 @@ export default class Post {
                 </header>
                 <div class="post-content">
                     <div class="post-image" style="background-image: url('${await this.getImage(postDetails.featured_media)}');"></div>
-                    <div class="post-excerpt-container">
-                        ${postDetails.excerpt.rendered}
-                        <button class="continue-reading"> continue reading <i class="material-icons">arrow_forward</i></button>
-                    </div>
-                </div>
-                <div class="tags">
-                    <img class="tag-img" src="./imgs/tags-solid.svg" alt="">
-                    <div class="tag-links">
-                        <a href=""> Beginner </a>
-                        <a href=""> Web Development </a>
-                        <a href=""> Javascript </a>
-                    </div>
                 </div>
             </article>
         </section>
@@ -65,13 +66,16 @@ export default class Post {
 
             let img
 
-            await fetch(`http://localhost/wordpress/wp-json/wp/v2/media/${imgId}`)
+            await fetch(`https://randomblog0.000webhostapp.com/wp-json/wp/v2/media/${imgId}`)
             .then(res => res.json())
             .then(imgData => {
                 img = imgData.media_details.sizes.full.source_url
             })
+            .catch( err => {
+                img = `https://cdn.pixabay.com/photo/2018/05/02/23/42/website-3370083_960_720.jpg`            
 
-            console.log(img);
+                return false
+            })
 
             return img
     }

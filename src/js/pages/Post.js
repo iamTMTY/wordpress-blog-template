@@ -3,9 +3,9 @@ import Contact from "../components/Contact.js"
 import Footer from "../components/Footer.js"
 import Header from "../components/Header.js"
 import Newsletter from "../components/Newsletter.js"
-import { contactDrawer } from "../utilities/contact.js"
+import { contactDrawer } from "../utilities/contactDrawer.js"
+import  goHome  from "../utilities/goHomeBtn.js"
 import formatDate from "../utilities/formatDate.js"
-import { toggleNav } from "../utilities/nav.js"
 
 export default class PostPage {
 
@@ -19,8 +19,8 @@ export default class PostPage {
         
         this.body.innerHTML = `<h1>Loading...</h1>`
         let article = await this.fetchPost()
-        console.log(article);
         this.body.innerHTML = this.markup(article)
+        this.events()
 
     }
 
@@ -43,7 +43,7 @@ export default class PostPage {
                 ${article.content.rendered}
             </article>
             <div class="bottom-nav">
-                <button class="back">Back</button>
+                <button class="go-home">Back</button>
                 <button>Next article</button>
             </div>
         </main>
@@ -55,21 +55,20 @@ export default class PostPage {
     }
 
     events = () => {
-        toggleNav()
         contactDrawer()
+        goHome()
     }
 
     fetchPost = async() => {
         
         let post;
 
-        await fetch(`http://localhost/wordpress/wp-json/wp/v2/posts/${this.postId}`)
+        await fetch(`https://randomblog0.000webhostapp.com/wp-json/wp/v2/posts/${this.postId}`)
             .then(res => res.json())
             .then(async (data) => {
                 post = data
             })
 
-        console.log(post);
         return post
     }
 }

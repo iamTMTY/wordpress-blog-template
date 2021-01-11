@@ -1,17 +1,11 @@
 @import '../utilities/variables';
 
-.posts {
+.posts-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 50px 5vw;
-
-    .posts-header {
-        width: 100%;
-        font-size: 20px;
-        text-align: left;
-        color: $primary-color;
-    }
+    margin: 20px 0;
+    width: 90%;
 
     & > .post-divider {
         border: 1px solid $tertiary-color;
@@ -30,38 +24,78 @@
     // }
 }
 
+.posts-header {
+    width: 100%;
+    text-align: left;
+    color: black;
+
+    h1 {
+        font-size: 25px;
+    }
+}
+
+.posts {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 50px 70px;
+    
+    @media only screen and (max-width: 800px) {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 30px 20px;
+    }
+
+    // @media only screen and (max-width: 600px) {
+    //     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    //     gap: 30px 20px;
+    // }
+}
+
 .post {
 
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-items: center;
-    margin: 0 2vw;
-    padding: 20px 20px;
-    border-radius: 10px;
-    background-color: $secondary-color;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 20px 0;
+    // margin: 20px 2vw;
+    // padding: 10px;
+    overflow: hidden;
+    // border-radius: 10px;
+    // background-color: $secondary-color;
+    // width: unquote("max(350px, min(10vw, 300px))");
 
-
-    &:hover {
-        background-color: $secondary-color;
-    }
 
     article {
         display: flex;
-        flex-direction: column;
-        margin: 0 10px;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        // margin: 0 10px;
+        width: 100%;
     }
+
+    @media only screen and (max-width: 600px) {
+        border-radius: .5em;
+        background-color: $secondary-color;
+        padding: 20px;   
+    }    
 }
 
 .post-header {
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
+    margin-top: 5px;
 
     h2 {
         font-size: 20px;
         color: $primary-color;
-        width: 60%;
         cursor: pointer;
+
+        &:hover {
+            color: $tertiary-color;
+        }
     }
 }
 
@@ -69,42 +103,47 @@
     display: flex;
     flex-direction: column;
     font-weight: 400;
-    align-items: flex-end;
-    color: $primary-color;
-    text-align: end;
+    // align-items: flex-end;
+    color: grey;
+    // text-align: end;
 }
 
 .post-content {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    // justify-content: space-between;
     // align-items: center;
     overflow: hidden;
-    margin: 10px 0 5px;
+    // margin: 10px 0 5px;
     font-size: 15px;
     width: 100%;
-    height: 190px;
+    // height: 190px;
 }
 
 .post-image {
-    min-width: 300px;
-    height: 100%;
-    border-radius: .5em;
+    width: 100%;
+    height: 200px;
+    border-radius: .2em;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+
+    @media only screen and (max-width: 800px) {
+        height: 150px;
+    }
 }
 
 .post-excerpt-container {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    margin-left: 20px;
 
     & > p {
         --lh: 1.4rem;
         line-height: var(--lh);
         max-height: calc(var(--lh) * 4);
         overflow: hidden;
+        display: none;
     }
 }
 
@@ -122,6 +161,7 @@
     border-radius: 5px;
     margin-left: auto;
     text-transform: uppercase;
+    display: none;
 
     i {
         font-size: 20px;
@@ -136,10 +176,12 @@
 }
 
 .tags {
+    width: 100%;
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin: 20px 0 0 auto;
+    flex-wrap: wrap;
+    // justify-content: space-between;
+    margin-top: 5px;
 
     @media only screen and (max-width: 550px) {
         margin: 10px auto 0;
@@ -147,25 +189,26 @@
 }
 
 .tag-img {
-    width: 15px;
-    height: 15px;
-    margin-right: 20px;
+    width: 10px;
+    height: 10px;
+    margin-right: 2px;
 }
 
-.tag-links {
+.tag-link {
     display: flex;
-    flex-wrap: wrap;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    margin: 0 20px 10px 0;
 
     a {
         text-transform: uppercase;
-        font-size: 11px;
-        margin: 5px 10px;
-        cursor: pointer;
+        font-size: 9px;
         text-decoration: underline;
         width: max-content;
 
         @media only screen and (max-width: 800px) {
-            font-size: 10px;
+            font-size: 8px;
         }
     }
 }
@@ -212,7 +255,7 @@
     }
     
     .post {
-        padding: 20px 10px;
+        // padding: 20px 10px;
     }
 
     .post-header {
@@ -226,16 +269,16 @@
         font-size: 14px;
     }
 
-    .post-content {
-        height: 135px;
-    }
+    // .post-content {
+    //     height: 135px;
+    // }
 
-    .post-excerpt {
+    // .post-excerpt {
         
-    }
+    // }
 
     .post-image {
-        min-width: 230px;
+        // min-width: 230px;
     }
 
     .post-excerpt-container {
@@ -255,12 +298,8 @@
 
 @media (max-width: 550px) {
 
-    .posts {
+    .posts-container {
         margin: 20px 2vw;
-    }
-
-    .post {
-        background-color: $secondary-color
     }
 
     .post-header {
@@ -269,17 +308,12 @@
     
         h2 {
             font-size: 15px;
-            text-align: center;
             width: 100%;
         }
     }
 
     .date_author {
-        flex-direction: row;
-        justify-content: space-between;
-        align-items: flex-start;
-        margin-top: 5px;
-        padding: 0 10px;   
+        margin: 5px 0 0 0;
     }
 
     .author {
@@ -298,10 +332,10 @@
         align-items: center;
     }   
 
-    .post-image {
-        width: 100%;
-        height: 50vw;
-    }
+    // .post-image {
+    //     width: 100%;
+    //     height: 50vw;
+    // }
 
     .post-excerpt-container {
         margin: 20px 0 0 0;
