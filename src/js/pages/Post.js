@@ -6,6 +6,7 @@ import Newsletter from "../components/Newsletter.js"
 import { contactDrawer } from "../utilities/contactDrawer.js"
 import  goHome  from "../utilities/goHomeBtn.js"
 import formatDate from "../utilities/formatDate.js"
+import Loading from "../components/Loading.js"
 
 export default class PostPage {
 
@@ -17,7 +18,7 @@ export default class PostPage {
 
     render = async() => {
         
-        this.body.innerHTML = `<h1>Loading...</h1>`
+        this.body.innerHTML = new Loading().showLoading()
         let article = await this.fetchPost()
         this.body.innerHTML = this.markup(article)
         this.events()

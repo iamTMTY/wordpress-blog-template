@@ -9,7 +9,7 @@
 body {
   background-color: white;
   color: black;
-  font-family: 'Zilla Slab', sans-serif;
+  font-family: 'Nunito', sans-serif;
 }
 
 a {
@@ -35,6 +35,7 @@ a {
   font-size: 25px;
   color: black;
   width: 100%;
+  font-family: 'Zilla Slab', sans-serif;
 }
 
 .about p {
@@ -52,7 +53,7 @@ a {
 }
 
 .about button {
-  background-color: #024192;
+  background-color: crimson;
   color: white;
   border: 2px solid transparent;
   padding: 10px 20px;
@@ -102,6 +103,7 @@ a {
 
 .content h2 {
   color: #024192;
+  font-family: 'Zilla Slab', sans-serif;
 }
 
 .content form {
@@ -258,6 +260,7 @@ nav {
   z-index: 3;
   box-shadow: 0px 0px 10px 0px rgba(2, 65, 146, 0.4);
   overflow: hidden;
+  font-family: 'Zilla Slab', sans-serif;
 }
 
 @media only screen and (max-width: 800px) {
@@ -364,6 +367,7 @@ nav {
 .newsletter h1 {
   font-size: 25px;
   color: black;
+  font-family: 'Zilla Slab', sans-serif;
 }
 
 .newsletter form {
@@ -483,6 +487,7 @@ nav {
   width: 100%;
   text-align: left;
   color: black;
+  font-family: 'Zilla Slab', sans-serif;
 }
 
 .posts-header h1 {
@@ -539,6 +544,7 @@ nav {
   font-size: 20px;
   color: #024192;
   cursor: pointer;
+  font-family: 'Zilla Slab', sans-serif;
 }
 
 .post-header h2:hover {
@@ -550,6 +556,8 @@ nav {
   flex-direction: column;
   font-weight: 400;
   color: grey;
+  font-size: 13px;
+  margin-top: 5px;
 }
 
 .post-content {
@@ -647,15 +655,13 @@ nav {
 
 .tag-link a {
   text-transform: uppercase;
-  font-size: 9px;
-  text-decoration: underline;
+  font-size: 10px;
   width: max-content;
+  color: #024192;
 }
 
-@media only screen and (max-width: 800px) {
-  .tag-link a {
-    font-size: 8px;
-  }
+.tag-link a:hover {
+  text-decoration: underline;
 }
 
 .paging {
@@ -897,6 +903,11 @@ nav {
   text-justify: inter-word;
 }
 
+.article-content h1, .article-content h2, .article-content h3, .article-content h4, .article-content h5 {
+  font-family: 'Zilla Slab', sans-serif;
+  margin-bottom: 5px;
+}
+
 .article-header {
   display: flex;
   flex-direction: column;
@@ -917,6 +928,7 @@ nav {
 
 .article_header-text h1 {
   font-size: 30px;
+  font-family: 'Zilla Slab', sans-serif;
 }
 
 .article_date_author {
@@ -989,6 +1001,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: 'Zilla Slab', sans-serif;
 }
 
 .intro-imgs {
@@ -1054,7 +1067,7 @@ nav {
 
 .subscribe a {
   background-color: crimson;
-  padding: 15px 30px;
+  padding: 15px 50px;
   color: white;
   font-weight: bold;
   font-size: 15px;
@@ -1062,7 +1075,30 @@ nav {
 }
 
 .subscribe:hover {
-  transform: scale(0.95);
+  transform: scale(0.97);
+}
+
+.loading {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading > div {
+  width: 400px;
+  height: 400px;
+  background-image: url(../imgs/cloud-loading.gif);
+  background-size: contain;
+  background-position: center center;
+}
+
+@media only screen and (max-width: 550px) {
+  .loading > div {
+    width: 300px;
+    height: 300px;
+  }
 }
 
 .home {

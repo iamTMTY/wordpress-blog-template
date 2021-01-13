@@ -74,6 +74,11 @@
          width: 100%;
          text-justify: inter-word;
      }
+
+     h1, h2, h3, h4, h5 {
+        font-family: 'Zilla Slab', sans-serif;
+        margin-bottom: 5px;
+     }
 }
 
 .article-header {
@@ -98,6 +103,7 @@
     h1 {
         // width: 65%;
         font-size: 30px;
+        font-family: 'Zilla Slab', sans-serif;
     }
 }
 

@@ -2,6 +2,7 @@ import About from "../components/About.js"
 import Contact from "../components/Contact.js"
 import Footer from "../components/Footer.js"
 import Header from "../components/Header.js"
+import Loading from "../components/Loading.js"
 import Newsletter from "../components/Newsletter.js"
 import Post from "../components/Post.js"
 import Social from "../components/Social.js"
@@ -20,7 +21,7 @@ export default class Home {
 
     render = async() => {
 
-        this.body.innerHTML = `<h1>Loading...</h1>`
+        this.body.innerHTML = new Loading().showLoading()
 
         let posts = await this.fetchPosts()
         

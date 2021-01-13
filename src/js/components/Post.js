@@ -35,16 +35,13 @@ export default class Post {
             <article>
                 <div class="tags">
                     <div class="tag-link">
-                        <img class="tag-img" src="./imgs/tags-solid.svg" alt="">
-                        <a href=""> Beginner </a>
+                        <a href=""> #Beginner </a>
                     </div>
                     <div class="tag-link">
-                        <img class="tag-img" src="./imgs/tags-solid.svg" alt="">
-                        <a href=""> Web Development </a>
+                        <a href=""> #Web Development </a>
                     </div>
                     <div class="tag-link">
-                        <img class="tag-img" src="./imgs/tags-solid.svg" alt="">
-                        <a href=""> Javascript </a>
+                        <a href=""> #Javascript </a>
                     </div>
                 </div>
                 <header class="post-header"> 
