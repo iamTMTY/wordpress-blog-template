@@ -1,27 +1,28 @@
-@import './variables';
+@import "./variables";
 
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    outline: none;
-    scroll-behavior: smooth;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	outline: none;
+	scroll-behavior: smooth;
 }
 
 body {
-    background-color: white;
-    color: black;
-    font-family: 'Nunito', sans-serif;
+	background-color: white;
+	color: black;
+	font-family: "Nunito", sans-serif;
+	height: 100%;
 }
 
 a {
-    text-decoration: none;
-    color: black;
+	text-decoration: none;
+	color: black;
 }
 
 .section-start {
-    border: 1.5px solid $tertiary-color;
-    background-color: $tertiary-color;
-    margin-bottom: 20px;
-    width: 100%;
+	border: 1.5px solid $tertiary-color;
+	background-color: $tertiary-color;
+	margin-bottom: 20px;
+	width: 100%;
 }
