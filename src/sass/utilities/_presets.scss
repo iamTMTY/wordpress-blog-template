@@ -8,11 +8,19 @@
 	scroll-behavior: smooth;
 }
 
+html {
+	background-color: red;
+	overflow: hidden;
+	width: 100%;
+}
+
 body {
 	background-color: white;
 	color: black;
 	font-family: "Nunito", sans-serif;
 	height: 100%;
+	position: fixed;
+	overflow-y: scroll;
 }
 
 a {
