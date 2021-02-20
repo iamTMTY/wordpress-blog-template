@@ -1,38 +1,33 @@
-import About from "../components/About.js"
-import Contact from "../components/Contact.js"
-import Footer from "../components/Footer.js"
-import Header from "../components/Header.js"
-import Loading from "../components/Loading.js"
-import Newsletter from "../components/Newsletter.js"
-import Post from "../components/Post.js"
-import Social from "../components/Social.js"
-import { contactDrawer } from "../utilities/contactDrawer.js"
-import readPost from "../utilities/readPost.js"
-import PostPage from "./Post.js"
+import About from "../components/About.js";
+import Contact from "../components/Contact.js";
+import Footer from "../components/Footer.js";
+import Header from "../components/Header.js";
+import Loading from "../components/Loading.js";
+import Newsletter from "../components/Newsletter.js";
+import Post from "../components/Post.js";
+import Social from "../components/Social.js";
+import { contactDrawer } from "../utilities/contactDrawer.js";
+import readPost from "../utilities/readPost.js";
+import PostPage from "./Post.js";
 
 export default class Home {
+	root = document.querySelector(".root");
+	pages = [1, 2, 3];
 
-    body = document.querySelector('body')
-    pages = [1,2,3]
+	constructor() {}
 
-    constructor() {
-        
-    }
+	render = async () => {
+		this.root.innerHTML = new Loading().showLoading();
 
-    render = async() => {
+		let posts = await this.fetchPosts();
 
-        this.body.innerHTML = new Loading().showLoading()
+		this.root.innerHTML = await this.markup(posts);
 
-        let posts = await this.fetchPosts()
-        
-        this.body.innerHTML = await this.markup(posts)
-        
-        this.events()
+		this.events();
+	};
 
-    }
-
-    markup = async(posts) => {
-        return `
+	markup = async (posts) => {
+		return `
         ${new Header().render()}
         <main class="home">
             <div class="intro-img-text">
@@ -70,8 +65,8 @@ export default class Home {
                 </div>
                 <div class="paging">
                     ${this.pages.reduce((acc, curr, idx) => {
-                        return acc + `<button>${idx + 1}</button>`
-                    }, ``)}
+											return acc + `<button>${idx + 1}</button>`;
+										}, ``)}
                 </div>
             </section>
             ${new Newsletter().render()}
@@ -79,25 +74,23 @@ export default class Home {
         ${new Contact().render()}
         ${new About().render()}
         ${new Footer().render()}
-        `
-    }
+        `;
+	};
 
-    events = () => {
-        contactDrawer()
-        readPost()
-    }
+	events = () => {
+		contactDrawer();
+		readPost();
+	};
 
-    fetchPosts = async() => {
-        
-        let posts;
+	fetchPosts = async () => {
+		let posts;
 
-        await fetch('https://randomblog0.000webhostapp.com/wp-json/wp/v2/posts')
-            .then(res => res.json())
-            .then(async (data) => {
-                posts = data
-            })
+		await fetch("https://randomblog0.000webhostapp.com/wp-json/wp/v2/posts")
+			.then((res) => res.json())
+			.then(async (data) => {
+				posts = data;
+			});
 
-        return posts
-    }
-
+		return posts;
+	};
 }
